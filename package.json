@@ -4,7 +4,7 @@
   "description": "",
   "main": "cloneArray.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage --watchAll"
   },
   "keywords": [],
   "author": "",
