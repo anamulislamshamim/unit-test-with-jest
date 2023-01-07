@@ -1,3 +1,16 @@
+// get user input fields
+const getUserInputs = function () {
+    const useridInput = document.querySelector("input#userid");
+    const titleInput = document.querySelector("input#title");
+    const articleInput = document.querySelector("textarea#article");
+
+    return {
+        useridInput,
+        titleInput,
+        articleInput,
+    };
+};
+
 function userInfo(userId, title) {
     return `${userId} & ${title}`
 };
@@ -35,7 +48,14 @@ const checkAndGenerate = function (userId, title, article) {
     // generate output
     const resultText = generateResult(userId, title);
     return resultText;
-}
+};
 
+// Creates a new DOM element and returns it
+const createElement = function (type, text, className = null) {
+    const newElement = document.createElement(type);
+    if (className) newElement.classList.add(className);
+    newElement.textContent = text;
+    return newElement;
+};
 
-module.exports = { userInfo, validateInput, checkAndGenerate };
+module.exports = { userInfo, validateInput, checkAndGenerate, getUserInputs, createElement };
